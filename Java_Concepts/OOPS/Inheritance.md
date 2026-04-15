@@ -130,6 +130,8 @@ class Sample {
 ```
 
 ***
+
+```java
 class GrandParent {
     GrandParent() {
         System.out.println("GrandParent constructor");
@@ -154,3 +156,4 @@ public class Test {
     }
 }
 
+```
