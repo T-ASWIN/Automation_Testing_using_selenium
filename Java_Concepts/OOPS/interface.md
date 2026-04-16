@@ -89,5 +89,7 @@ class Car implements Vehicle {
 *   An interface **cannot have constructors**
 *   An interface **cannot be instantiated**
 
+what we need to develop we know but not how
+
 ***
 
