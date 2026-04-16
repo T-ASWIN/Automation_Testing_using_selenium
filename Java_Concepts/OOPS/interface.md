@@ -8,6 +8,8 @@
 An **interface** in Java is used to achieve **abstraction and multiple inheritance**.  
 It defines **what a class should do**, not **how it should do it**.
 
+**When we use an interface, we know WHAT needs to be developed, but we do NOT know HOW it will be developed.**
+
 ***
 
 ## Key Points of Interface
@@ -89,7 +91,6 @@ class Car implements Vehicle {
 *   An interface **cannot have constructors**
 *   An interface **cannot be instantiated**
 
-what we need to develop we know but not how
 
 ***
 
