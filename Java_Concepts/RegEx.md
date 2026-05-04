@@ -153,3 +153,223 @@ String regex = "\\d{10}";
 
 ***
 
+***
+
+## 1️⃣ `[]` → Character class (ANY ONE character)
+
+### Meaning
+
+Matches **any one character** inside the brackets.
+
+### Example
+
+```java
+"[abc]"
+```
+
+✅ Matches:
+
+*   `"a"`
+*   `"b"`
+*   `"c"`
+
+❌ Does NOT match:
+
+*   `"ab"` (only one character allowed)
+
+```java
+System.out.println("a".matches("[abc]")); // true
+System.out.println("d".matches("[abc]")); // false
+```
+
+***
+
+## 2️⃣ `[^ ]` → Negated character class (NOT)
+
+### Meaning
+
+`^` **inside `[]`** means **NOT**  
+Matches **any character except** those inside brackets.
+
+### Example
+
+```java
+"[^abc]"
+```
+
+✅ Matches:
+
+*   `"d"`
+*   `"1"`
+*   `"@"`
+
+❌ Does NOT match:
+
+*   `"a"`
+*   `"b"`
+
+```java
+System.out.println("x".matches("[^abc]")); // true
+System.out.println("a".matches("[^abc]")); // false
+```
+
+***
+
+## 3️⃣ `[a-z]` → Character range
+
+### Meaning
+
+Matches **any lowercase letter** from `a` to `z`.
+
+### Example
+
+```java
+"[a-z]"
+```
+
+✅ Matches:
+
+*   `"a"`
+*   `"m"`
+*   `"z"`
+
+❌ Does NOT match:
+
+*   `"A"`
+*   `"1"`
+
+```java
+System.out.println("k".matches("[a-z]")); // true
+System.out.println("K".matches("[a-z]")); // false
+```
+
+✅ You can combine:
+
+```java
+"[a-zA-Z]"
+```
+
+→ matches both lowercase and uppercase letters.
+
+***
+
+## 4️⃣ `\s` → Whitespace character
+
+### Meaning
+
+Matches **any whitespace**:
+
+*   space
+*   tab (`\t`)
+*   newline (`\n`)
+
+### Example
+
+```java
+"\\s"
+```
+
+⚠️ In Java, use **double backslash**.
+
+```java
+System.out.println(" ".matches("\\s"));   // true
+System.out.println("\n".matches("\\s"));  // true
+System.out.println("a".matches("\\s"));   // false
+```
+
+***
+
+## 5️⃣ `\d` → Digit
+
+### Meaning
+
+Matches **any digit (0–9)**
+
+### Example
+
+```java
+"\\d"
+```
+
+✅ Matches:
+
+*   `"0"`
+*   `"5"`
+*   `"9"`
+
+❌ Does NOT match:
+
+*   `"a"`
+
+```java
+System.out.println("5".matches("\\d")); // true
+System.out.println("a".matches("\\d")); // false
+```
+
+✅ For multiple digits:
+
+```java
+"\\d+"
+```
+
+***
+
+## 6️⃣ `^[]$` → Start and end anchors
+
+### Meaning
+
+*   `^` → start of string
+*   `$` → end of string
+
+Ensures **FULL match**, not partial.
+
+### Example
+
+```java
+"^[a-z]+$"
+```
+
+✅ Matches:
+
+*   `"java"`
+*   `"regex"`
+
+❌ Does NOT match:
+
+*   `"Java123"`
+*   `"java!"`
+
+```java
+System.out.println("java".matches("^[a-z]+$"));   // true
+System.out.println("java123".matches("^[a-z]+$"));// false
+```
+
+***
+
+## 🔁 Combined Real Example
+
+### Validate **only lowercase letters and spaces**
+
+```java
+String regex = "^[a-z\\s]+$";
+```
+
+✅ `"hello world"`  
+❌ `"Hello123"`
+
+***
+
+## ✅ Quick Summary Table
+
+| Regex   | Meaning              |
+| ------- | -------------------- |
+| `[]`    | Any one character    |
+| `[^ ]`  | NOT these characters |
+| `[a-z]` | Lowercase letters    |
+| `\s`    | Whitespace           |
+| `\d`    | Digit (0–9)          |
+| `^...$` | Full string match    |
+
+***
+
+
