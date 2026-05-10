@@ -1,4 +1,3 @@
-```markdown
 # System Testing
 
 ## Types of System Testing
