@@ -110,16 +110,100 @@ A standard test case contains:
 - Helps track missing or incomplete testing
 
 ---
+***
 
-## 🏁 Summary
+# ✅ Requirement Traceability Matrix (RTM)
 
-STLC ensures:
-- Better product quality
-- Early defect detection
-- Complete requirement coverage
-- Structured testing process
+## 📌 What is RTM?
 
----
-```
+A **Requirement Traceability Matrix (RTM)** is a document that maps:
 
-If you want, I can also convert this into a **downloadable `.md` file or add examples for each test case**.
+👉 **Requirements → Test Cases**
+
+It ensures that **all requirements are tested properly**.
+
+***
+
+## 🎯 Purpose of RTM
+
+*   ✅ Make sure **no requirement is missed**
+*   ✅ Track **test coverage**
+*   ✅ Identify **missing test cases**
+*   ✅ Help in **impact analysis** when requirements change
+*   ✅ Provide **proof of testing** to stakeholders
+
+***
+
+## 🔗 Simple Example
+
+| Requirement ID | Requirement Description | Test Case ID | Status |
+| -------------- | ----------------------- | ------------ | ------ |
+| R1             | User login              | TC\_01       | Pass   |
+| R2             | Password reset          | TC\_02       | Fail   |
+| R3             | User logout             | TC\_03       | Pass   |
+
+👉 This shows:
+
+*   Each requirement is linked to a test case
+*   You can track testing status easily
+
+***
+
+## 🔁 Types of Traceability
+
+### 1. Forward Traceability
+
+👉 Requirement → Test Case
+
+*   Ensures **every requirement is tested**
+
+### 2. Backward (Reverse) Traceability
+
+👉 Test Case → Requirement
+
+*   Ensures **no extra/unnecessary test cases**
+
+### 3. Bidirectional Traceability
+
+👉 Combines both
+
+*   Most commonly used in real projects
+
+***
+
+## 🧾 RTM Contains
+
+*   Requirement ID
+*   Requirement Description
+*   Test Case ID
+*   Test Case Status (Pass/Fail)
+*   Remarks (optional)
+
+***
+
+## 🧠 Easy Understanding (Shortcut)
+
+👉 Think of RTM as a **linking sheet**
+
+    Requirement  →  Test Case  →  Result
+
+***
+
+## 📌 Example in Real Life
+
+Requirement:  
+👉 "User should be able to login"
+
+RTM Mapping:
+
+*   TC\_01 → Valid login → Pass
+*   TC\_02 → Invalid password → Pass
+*   TC\_03 → Empty fields → Fail
+
+✔ Now you know:
+
+*   Requirement is fully tested ✅
+*   One scenario failed ❌
+
+***
+
