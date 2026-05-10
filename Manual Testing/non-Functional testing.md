@@ -1,4 +1,3 @@
-```markdown
 # Non-Functional Testing
 
 ## Types of Non-Functional Testing
