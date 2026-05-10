@@ -1,6 +1,4 @@
-Here’s your content structured as a clean **README.md file**:
 
-```markdown
 # Software Testing Life Cycle (STLC)
 
 The **Software Testing Life Cycle (STLC)** is a sequence of activities performed during the testing process to ensure software quality by verifying and validating the application.
