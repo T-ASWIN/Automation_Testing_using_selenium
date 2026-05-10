@@ -1,4 +1,3 @@
-```markdown
 # QA vs QC – Software Testing Basics
 
 ## ✅ QA (Quality Assurance) vs QC (Quality Control)
