@@ -15,6 +15,20 @@ Requirement changes in the middle of development
 ▪ Crystal
 we implement agile using this frame works
 
+-->daily scrum meeting
+-->Sprint review 
+   give demo to the product owner
+-->sprint retrospective
+   what went well?
+   what went wrong?
+   improvement area
+
+   -->burndown chart
+     how much work completed and pending
+
+     standup meeting for 15 min
+
+
 
 
 3. Scrum is a framework through which we build software product by following Agile Principles.
