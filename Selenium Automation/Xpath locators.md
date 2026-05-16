@@ -40,3 +40,58 @@ syntax:
 
 //img[@title='MacBook']
 
+xpath with inner text - text()
+-----------
+//a[text()='Desktops']
+//a[text()='MacBook']
+
+
+<a href="https://xyz.com"> Click Me </a>
+	
+linktext = yes
+inner text = yes
+
+<div>welcome</div>
+linktext= no
+innertext= yes
+
+
+xpath with contains()
+---------------------
+//input[contains(@placeholder,'Sea')]
+
+
+handling dynamic attributes
+-------------
+
+//*[@id='start' or @id='stop']
+//*[contains(@id,'st')]
+//*[starts-with(@id,'st')]
+
+
+name=xyz001  xyz002   xyz 003 xyz004 xyz001 xyz 002
+
+//*[contains(@name,'xyz')]
+//*[contains(@name,'00')]
+//*[starts-with(@name,'xyz')]
+
+
+name= 1xyz 2xyz 3xyz 4xyz 1xyz
+	//*[contains(@name,'xyz')]
+
+
+name=101xyz  201xyz  301xyz  401xyz
+	//*[contains(@name,' xyz')]
+	//*[contains(@name,' 01')]
+
+chained xpath
+---------------
+//div[@id='logo']/a/img
+
+
+
+<div></div>
+
+//div[contains(text(),'')]
+//[contains(.,’ ‘)] 
+
