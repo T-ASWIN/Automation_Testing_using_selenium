@@ -1,8 +1,6 @@
-Great notes 👍  
-I’ll **organize, correct wording where needed, explain clearly**, and then **explain all these methods with examples using**  
+
 👉 **<https://testautomationpractice.blogspot.com>**
 
-You can use this as **class notes / README / interview prep** ✅
 
 ***
 
