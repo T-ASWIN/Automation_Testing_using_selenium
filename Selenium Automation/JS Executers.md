@@ -4,4 +4,4 @@
 when we use something like click it show elementinterceptedexception it mean it cannot able to perform its action so we use js executer
 
 
-we be
+we use js for sendkeys and click basically
