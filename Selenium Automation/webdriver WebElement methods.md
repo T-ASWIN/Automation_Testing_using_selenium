@@ -180,3 +180,99 @@ driver.navigate().forward();
 
 ***
 
+
+### Short answer
+
+✅ **Both `get()` and `navigate().to()` are used to open URLs**  
+❌ `navigate()` is **not limited only to `.to()`**
+
+***
+
+## ✅ Difference between `get()` and `navigate().to()`
+
+### 1️⃣ `driver.get(url)`
+
+**Purpose**
+
+* Open a URL
+* Waits until the **entire page is fully loaded**
+
+**Key points**
+
+* Simpler, most commonly used
+* Does **not** keep browser history control
+
+**Example**
+
+```java
+driver.get("https://google.com");
+```
+
+***
+
+### 2️⃣ `driver.navigate().to(url)`
+
+**Purpose**
+
+* Also opens a URL
+* Part of **browser navigation**
+
+**Key points**
+
+* Works like typing a URL in browser address bar
+* Does **not always wait** completely like `get()`
+* Allows **back, forward, refresh**
+
+**Example**
+
+```java
+driver.navigate().to("https://google.com");
+```
+
+***
+
+## ✅ Navigation commands (important)
+
+`navigate()` gives you **browser-like controls**:
+
+```java
+driver.navigate().to("https://site1.com");
+driver.navigate().back();
+driver.navigate().forward();
+driver.navigate().refresh();
+```
+
+So ❗  
+👉 We don't use `navigate()` *only* for `.to()`  
+👉 We use it when **browser history matters**
+
+***
+
+## ✅ Interview-friendly comparison
+
+| Aspect              | get() | navigate().to() |
+| ------------------- | ----- | --------------- |
+| Opens URL           | ✅     | ✅               |
+| Waits for full load | ✅     | ⚠️ Not always   |
+| Browser history     | ❌     | ✅               |
+| Back / Forward      | ❌     | ✅               |
+| Simplicity          | ✅     | ⚠️              |
+
+***
+
+## ✅ When to use what?
+
+### Use `get()` when:
+
+* Opening a page for the first time
+* Login pages
+* Simple flows
+
+### Use `navigate()` when:
+
+* Testing back/forward behavior
+* Multi-page flows
+* Browser-like navigation testing
+
+***
+
