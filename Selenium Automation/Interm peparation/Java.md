@@ -596,24 +596,145 @@ Write once → Run anywhere
 
 # 26️⃣ Multi‑Threading
 
-## ✅ What is Multi‑Threading?
+## ✅ What is a Thread? (Simple Meaning)
 
-Executing **multiple threads simultaneously** to improve performance.
+A **thread** is a **small unit of execution** that runs **independently** inside a program.
 
-### Example:
+👉 In simple words:  
+**Thread = One task running inside a program**
+
+### Real‑Life Example
+
+Think of a **mobile phone**:
+
+* Playing music 🎵 (one thread)
+* Downloading a file 📥 (second thread)
+* Receiving notifications 🔔 (third thread)
+
+All these happen **at the same time** → this is **multithreading**.
+
+***
+
+## ✅ Thread in Java (Easy Example)
 
 ```java
 class MyThread extends Thread {
     public void run() {
-        System.out.println("Thread running");
+        System.out.println("Thread is running");
+    }
+
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.start();   // starts a new thread
     }
 }
 ```
 
-✅ Used for:
+### Explanation:
 
-* Faster execution
-* Efficient CPU usage
+* `Thread` → predefined Java class
+* `run()` → task performed by thread
+* `start()` → starts a new thread
+* JVM runs `run()` automatically
+
+***
+
+## ✅ Why Not Call `run()` Directly?
+
+Calling `run()`:
+
+* Runs **like a normal method**
+* No new thread is created
+
+Calling `start()`:
+
+* Creates a **new thread**
+* Executes in **parallel**
+
+✅ Always use `start()`.
+
+***
+
+## ✅ What is Multithreading?
+
+**Multithreading** means:
+
+> Executing **multiple threads at the same time** within a single program.
+
+***
+
+## ✅ Multithreading Example (Simple)
+
+```java
+class A extends Thread {
+    public void run() {
+        System.out.println("Thread A running");
+    }
+}
+
+class B extends Thread {
+    public void run() {
+        System.out.println("Thread B running");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        A t1 = new A();
+        B t2 = new B();
+
+        t1.start();
+        t2.start();
+    }
+}
+```
+
+### Output:
+
+```
+Thread A running
+Thread B running
+```
+
+(Execution order may vary)
+
+***
+
+## ✅ Why Use Multithreading?
+
+✅ Faster execution  
+✅ Better CPU utilization  
+✅ Improves performance  
+✅ Used in games, servers, web apps, Selenium
+
+***
+
+## ✅ Real‑Time Example (Interview Friendly)
+
+In **Selenium Automation**:
+
+* One thread runs test case
+* Another thread runs different browser
+* Both execute simultaneously
+
+***
+
+## ✅ Thread vs Process (One Line)
+
+* **Process** → Running program (Chrome, VS Code)
+* **Thread** → Task inside a program
+
+***
+
+## ✅ Interview One‑Line Answers
+
+🔹 **Thread**:
+
+> A thread is a lightweight sub‑process that runs independently inside a program.
+
+🔹 **Multithreading**:
+
+> Multithreading is executing multiple threads simultaneously to improve performance.
 
 ***
 
