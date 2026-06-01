@@ -828,3 +828,398 @@ System.out.println("Hello World");
 
 ***
 
+# 31 Types of variables
+
+# 🔷 1. Local Variables
+
+## ✅ Definition
+
+Declared **inside a method, constructor, or block**.
+
+👉 Scope: Only inside that method/block.
+
+***
+
+## 🔹 Example
+
+```java
+class Demo {
+    void display() {
+        int number = 10;  // local variable
+        System.out.println(number);
+    }
+}
+```
+
+***
+
+## 🔹 Key Points
+
+* No default value → must be initialized before use
+* Cannot use access modifiers (like public, private)
+* Exists only during method execution
+
+***
+
+# 🔷 2. Instance Variables (Non-static)
+
+## ✅ Definition
+
+Declared **inside a class but outside methods**, without `static`.
+
+👉 Each object gets its **own copy**
+
+***
+
+## 🔹 Example
+
+```java
+class Student {
+    int id;       // instance variable
+    String name;  // instance variable
+    
+    void display() {
+        System.out.println(id + " " + name);
+    }
+}
+```
+
+***
+
+## 🔹 Key Points
+
+* Created when **object is created**
+* Stored in **heap memory**
+* Has default values (0, null, false)
+* Accessible using objects
+
+***
+
+# 🔷 3. Static Variables (Class Variables)
+
+## ✅ Definition
+
+Declared with `static` keyword inside class.
+
+👉 Shared **among all objects**
+
+***
+
+## 🔹 Example
+
+```java
+class Student {
+    static String college = "ABC College"; // static variable
+    int id;
+    
+    void display() {
+        System.out.println(id + " " + college);
+    }
+}
+```
+
+***
+
+## 🔹 Key Points
+
+* Only **one copy exists**
+* Shared by all objects
+* Stored in **class memory (method area)**
+* Access using class name:
+
+```java
+Student.college
+```
+
+***
+
+# 🔷 4. Parameter Variables
+
+## ✅ Definition
+
+Variables passed to methods as input.
+
+***
+
+## 🔹 Example
+
+```java
+class Demo {
+    void show(int x) {   // parameter variable
+        System.out.println(x);
+    }
+}
+```
+
+***
+
+## 🔹 Key Points
+
+* Behaves like local variables
+* Scope limited to method
+
+***
+
+# 🔷 🔥 Bonus: Final Variables
+
+## ✅ Definition
+
+Declared with `final`, value **cannot be changed**
+
+***
+
+## 🔹 Example
+
+```java
+final int age = 25;
+age = 30;  // ❌ Error (cannot change)
+```
+
+***
+
+# 🔷 ✅ Summary Table
+
+| Variable Type | Declared In             | Scope        | Key Feature           |
+| ------------- | ----------------------- | ------------ | --------------------- |
+| Local         | Inside method           | Method only  | No default value      |
+| Instance      | Inside class            | Object level | Each object has copy  |
+| Static        | Inside class (`static`) | Class level  | Shared across objects |
+| Parameter     | Method arguments        | Method only  | Input variables       |
+
+***
+
+# ✅ Final Idea (Easy to Remember)
+
+* **Local** → inside method
+* **Instance** → inside class, per object
+* **Static** → shared across all objects
+* **Parameter** → method input
+
+***
+
+# 32 ## 🔷 What is a Constructor in Java?
+
+A **constructor** is a special method in Java used to **initialize objects**.  
+It is automatically called when an object of a class is created.
+
+***
+
+## ✅ Key Features of Constructor
+
+* Same name as the **class name**
+* **No return type** (not even `void`)
+* Called **automatically** when object is created
+* Used to **initialize variables**
+
+***
+
+## 🔹 Example
+
+```java
+class Student {
+    int id;
+    String name;
+
+    // constructor
+    Student() {
+        id = 1;
+        name = "Aswin";
+    }
+
+    void display() {
+        System.out.println(id + " " + name);
+    }
+
+    public static void main(String[] args) {
+        Student s = new Student();  // constructor is called
+        s.display();
+    }
+}
+```
+
+***
+
+# 🔷 Types of Constructors in Java
+
+## ✅ 1. Default Constructor (Implicit)
+
+### 🔹 Definition
+
+A constructor that is **automatically created by the compiler** if you don't define one.
+
+***
+
+### 🔹 Example
+
+```java
+class Demo {
+    int x;
+    
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        System.out.println(d.x);  // Output: 0 (default value)
+    }
+}
+```
+
+***
+
+### 🔹 Key Points
+
+* No parameters
+* Sets default values (0, null, false)
+* Created by compiler if no constructor is written
+
+***
+
+## ✅ 2. No-Argument Constructor (Explicit)
+
+### 🔹 Definition
+
+A constructor created by the programmer **without parameters**.
+
+***
+
+### 🔹 Example
+
+```java
+class Demo {
+    int x;
+
+    Demo() {
+        x = 10;
+    }
+
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        System.out.println(d.x);  // Output: 10
+    }
+}
+```
+
+***
+
+### 🔹 Key Points
+
+* No parameters
+* Used to assign custom initial values
+* Written manually
+
+***
+
+## ✅ 3. Parameterized Constructor
+
+### 🔹 Definition
+
+A constructor that **accepts parameters** to initialize variables.
+
+***
+
+### 🔹 Example
+
+```java
+class Student {
+    int id;
+    String name;
+
+    Student(int i, String n) {
+        id = i;
+        name = n;
+    }
+
+    void display() {
+        System.out.println(id + " " + name);
+    }
+
+    public static void main(String[] args) {
+        Student s1 = new Student(1, "Aswin");
+        Student s2 = new Student(2, "Ram");
+
+        s1.display();
+        s2.display();
+    }
+}
+```
+
+***
+
+### 🔹 Key Points
+
+* Takes arguments
+* Allows different values for different objects
+* Most commonly used in real applications
+
+***
+
+## ✅ 4. Copy Constructor (Not built-in, user-defined)
+
+### 🔹 Definition
+
+A constructor used to **copy values from one object to another**.
+
+***
+
+### 🔹 Example
+
+```java
+class Student {
+    int id;
+    String name;
+
+    Student(int i, String n) {
+        id = i;
+        name = n;
+    }
+
+    // copy constructor
+    Student(Student s) {
+        id = s.id;
+        name = s.name;
+    }
+
+    void display() {
+        System.out.println(id + " " + name);
+    }
+
+    public static void main(String[] args) {
+        Student s1 = new Student(1, "Aswin");
+        Student s2 = new Student(s1);
+
+        s2.display();
+    }
+}
+```
+
+***
+
+### 🔹 Key Points
+
+* Not provided by Java by default
+* Must be created manually
+* Copies object values
+
+***
+
+# 🔷 🔥 Summary Table
+
+| Constructor Type | Parameters          | Created By | Purpose                |
+| ---------------- | ------------------- | ---------- | ---------------------- |
+| Default          | No                  | Compiler   | Assign default values  |
+| No-Argument      | No                  | Programmer | Custom initialization  |
+| Parameterized    | Yes                 | Programmer | Initialize with values |
+| Copy             | Object as parameter | Programmer | Copy object data       |
+
+***
+
+# ✅ Final Summary
+
+* A **constructor** is used to initialize objects in Java.
+* It is called automatically when an object is created.
+* Main types:
+  * **Default constructor**
+  * **No-argument constructor**
+  * **Parameterized constructor**
+  * **Copy constructor**
+
+***
+
