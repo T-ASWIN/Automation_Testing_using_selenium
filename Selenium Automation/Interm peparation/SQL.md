@@ -806,4 +806,133 @@ ORDER BY Total DESC;
 * **GROUP BY** → Group data
 * **HAVING** → Filter groups
 
+In SQL (Structured Query Language), commands are grouped into different categories based on what they do.
+
+***
+
+# 🔹 Main SQL Command Types
+
+## 1. DDL – Data Definition Language
+
+👉 Used to **define or modify database structure**
+
+### Commands:
+
+* `CREATE` → create table/database
+* `ALTER` → modify structure
+* `DROP` → delete table/database
+* `TRUNCATE` → remove all records (faster than DELETE)
+
+### Example:
+
+```sql
+CREATE TABLE students (
+  id INT,
+  name VARCHAR(50)
+);
+
+ALTER TABLE students ADD age INT;
+
+DROP TABLE students;
+```
+
+***
+
+## 2. DML – Data Manipulation Language
+
+👉 Used to **change data inside the table**
+
+### Commands:
+
+* `INSERT` → add data
+* `UPDATE` → modify data
+* `DELETE` → remove data
+
+### Example:
+
+```sql
+INSERT INTO students VALUES (1, 'Aswin');
+
+UPDATE students SET name = 'John' WHERE id = 1;
+
+DELETE FROM students WHERE id = 1;
+```
+
+***
+
+## 3. DQL – Data Query Language
+
+👉 Used to **retrieve (fetch) data**
+
+### Command:
+
+* `SELECT`
+
+### Example:
+
+```sql
+SELECT * FROM students;
+
+SELECT name FROM students WHERE id = 1;
+```
+
+***
+
+## 4. DCL – Data Control Language
+
+👉 Used to **control permissions (access rights)**
+
+### Commands:
+
+* `GRANT` → give permission
+* `REVOKE` → remove permission
+
+### Example:
+
+```sql
+GRANT SELECT ON students TO user1;
+
+REVOKE SELECT ON students FROM user1;
+```
+
+***
+
+## 5. TCL – Transaction Control Language
+
+👉 Used to **manage transactions (save/undo changes)**
+
+### Commands:
+
+* `COMMIT` → save permanently
+* `ROLLBACK` → undo changes
+* `SAVEPOINT` → create restore point
+
+### Example:
+
+```sql
+BEGIN;
+
+UPDATE students SET name = 'Ram';
+
+SAVEPOINT s1;
+
+ROLLBACK TO s1;
+
+COMMIT;
+```
+
+***
+
+# 🔹 Simple Summary Table
+
+| Type | Full Form                    | Purpose                   |
+| ---- | ---------------------------- | ------------------------- |
+| DDL  | Data Definition Language     | Structure (tables)        |
+| DML  | Data Manipulation Language   | Insert/Update/Delete data |
+| DQL  | Data Query Language          | Fetch data                |
+| DCL  | Data Control Language        | Permissions               |
+| TCL  | Transaction Control Language | Save/Undo changes         |
+
+***
+
 
